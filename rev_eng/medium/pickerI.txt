@@ -1,0 +1,1 @@
+write 'win()' as payload
