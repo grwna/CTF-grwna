@@ -1,0 +1,5 @@
+The same as Sleuthkit-Apprentice, except the flag file is encrypted using openssl. 
+To decrypt, find the encryption password within a history file, the password is unbreakablepassword1234567
+Then use openssl to decrypt the flag file
+
+picoCTF{h4un71ng_p457_1d02081e}
