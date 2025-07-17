@@ -1,0 +1,1 @@
+Using ltrace you can see the license, also the 2nd character of input is swapped with the last character

@@ -1,0 +1,2 @@
+Using ghidra, we can see that the mangled string is being reversed.
+Also we can see the license using strings or ghidra aswell.
