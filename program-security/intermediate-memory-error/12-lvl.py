@@ -78,5 +78,6 @@ while (True):
 """
 Things Learned:
 Canaries dont change in function recursion
+GHIDRA offset calculation is EZ
 Newlines doesnt work like null for some functions
 """
