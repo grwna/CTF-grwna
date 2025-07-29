@@ -1,0 +1,6 @@
+More or less the same as hash only 1, but you are put the binary is located else where.
+This means you need to use 'find' to look for the file.
+
+Also you are put in a restricted shell 'rbash', to by pass this just spawn a normal shell using the 'bash' command.
+
+picoCTF{Co-@utH0r_Of_Sy5tem_b!n@riEs_fc0640ae}

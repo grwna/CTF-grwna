@@ -1,0 +1,10 @@
+Payload: 'SECRET_DIR="/root/; cat /root/flag.txt" ./bin'
+
+Explanation:
+The binary uses the SECRET_DIR environment variable to run the ls command.
+Where the command is likely: "ls $SECRET_DIR" or something like that.
+
+Because its running as just a normal command, adding a semicolon ';' will be parsed as ending a command.
+Which makes the 'cat' a separate command run by the binary.
+
+picoCTF{Power_t0_man!pul4t3_3nv_1670f174}

