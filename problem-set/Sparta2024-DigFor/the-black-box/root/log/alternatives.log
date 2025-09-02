@@ -1,0 +1,1 @@
+update-alternatives 2025-06-21 18:58:35: run with --install /bin/nc nc /usr/bin/ncat 0 --slave /bin/netcat netcat /usr/bin/ncat --slave /usr/share/man/man1/nc.1.gz nc.1.gz /usr/share/man/man1/ncat.1.gz --slave /usr/share/man/man1/netcat.1.gz netcat.1.gz /usr/share/man/man1/ncat.1.gz
