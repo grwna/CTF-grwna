@@ -1,3 +1,0 @@
-license = [0x17, 0x16, 0x10, 0xc, 0x15]
-answer = ''.join([chr(byt ^ 0x7f) for byt in license])
-print(answer)

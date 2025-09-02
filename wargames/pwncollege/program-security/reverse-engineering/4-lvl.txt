@@ -1,1 +1,0 @@
-The string is mangled by sorting it alphabetically, which is pointless since the license is already sorted alphabetically

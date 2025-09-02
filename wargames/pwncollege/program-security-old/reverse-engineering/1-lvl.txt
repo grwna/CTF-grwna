@@ -1,0 +1,1 @@
+Using ltrace we can see what the license is

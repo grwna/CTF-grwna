@@ -76,5 +76,5 @@ Desc:
     Use ROP to trigger a multi-stage win function!
 Explanation:
     Same with two but more stages, and each stage requires an argument, which means we need to start using ROP gadgets.
-    Each arguments are just the stage number, so we craft a ROP chain to pop those values to RDI
+    Each arguments are just the stage number, so we craft a ROP chain to pop those values to RDI then return to the stages's win
 """
