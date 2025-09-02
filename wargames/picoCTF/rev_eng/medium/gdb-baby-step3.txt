@@ -1,0 +1,5 @@
+b *main+22
+run
+x/4xb ($rbp-4)
+
+picoCTF{0x6bc96222}

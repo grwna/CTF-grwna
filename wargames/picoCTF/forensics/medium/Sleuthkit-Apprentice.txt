@@ -1,0 +1,11 @@
+First, we need to figure out what kind of image file it is. Using file, it seems to be a DOS/MBR boot sector files, with three partitions.
+After separating the partitions using these commands:
+dd if=disk.flag.img  of=sleuth1.img bs=512 skip=2048 count=204800
+dd if=disk.flag.img  of=sleuth2.img bs=512 skip=206848 count=153600
+dd if=disk.flag.img  of=sleuth3.img bs=512 skip=360448 count=253952
+
+The first partition is another MBR boot sector, the second is a Linux swap file (paging), while the third is an ext4 filesystem, the filesystem is what we're interested in.
+Using fls on it and grepping 'flag' we found a flag.txt file, use icat to read that file
+
+picoCTF{by73_5urf3r_adac6cb4}
+

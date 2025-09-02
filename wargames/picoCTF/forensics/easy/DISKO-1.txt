@@ -1,0 +1,3 @@
+strings disko-1.dd | grep picoCTF
+
+picoCTF{1t5_ju5t_4_5tr1n9_e3408eef}

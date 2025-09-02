@@ -1,0 +1,4 @@
+b *main+151
+x/s ($rbp-0x30)
+
+picoCTF{ASCII_IS_EASY_3CF4BFAD}

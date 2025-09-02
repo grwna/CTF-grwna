@@ -1,0 +1,6 @@
+dd if=disko-2.dd of=partition1.dd bs=512 skip=2048 count=51200
+strings partition1.dd | grep picoCTF
+
+The reason we use partition 1 is because the challenge's flavortext says the right one is Linux, and partition 1 is recognized as Linux filesystem by 'file' command while partition 2 is just a regular MBR/DOS.
+
+picoCTF{4_P4Rt_1t_i5_a93c3ba0}
